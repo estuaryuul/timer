@@ -10,7 +10,7 @@ function App() {
   const alarm = document.getElementById("audio");
 
   useEffect(() => {
-    setTimer(1);
+    setTimer(sessionLength * 60);
   }, [sessionLength]);
 
   useEffect(() => {
@@ -21,6 +21,10 @@ function App() {
       }, 1000);
       if (timer < 0) {
         alarm.play();
+        setTimeout(() => {
+          alarm.pause();
+          alarm.currentTime = 0;
+        }, 3000);
         if (status === "Session") {
           setStatus("Break");
           setTimer(breakLength * 60);
@@ -141,7 +145,10 @@ function App() {
         <h2 id="timer-label">{status}</h2>
         <div id="time-left">{formatTimer(timer)}</div>
         <audio id="audio">
-          <source src="/audio/beep.mp3" type="audio/mpeg" />
+          <source
+            src={`${process.env.PUBLIC_URL}/audio/beep.mp3`}
+            type="audio/mpeg"
+          />
         </audio>
       </div>
       <div id="control-button">
