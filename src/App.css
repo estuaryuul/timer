@@ -1,0 +1,45 @@
+.App {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #303633;
+  color: #8be8cb;
+}
+
+#break-session-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.incre-decre-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+#timer-container {
+  width: 300px;
+  height: 150px;
+  margin-bottom: 40px;
+  border: 5px solid #7ea2aa;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#control-button {
+  display: flex;
+  font-size: 2rem;
+  gap: 20px;
+}
